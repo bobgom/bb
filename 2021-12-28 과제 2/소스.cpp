@@ -1,46 +1,46 @@
-#include <windows.h>                           // À©µµ¿ì Çì´õÆÄÀÏ
+#include <windows.h>                           // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 #include <time.h>
 #include <stdlib.h>
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
-HINSTANCE g_hInst;                              //ÀÎ½ºÅÏ½º ÇÚµé
-LPCTSTR lpszClass = TEXT("Á¤»óÈ£_18032081");            //Á¦¸ñ Ç¥½ÃÁÙ¿¡ Ç¥½ÃµÇ´Â ³»¿ë
+HINSTANCE g_hInst;                              //ï¿½Î½ï¿½ï¿½Ï½ï¿½ ï¿½Úµï¿½
+LPCTSTR lpszClass = TEXT("ï¿½ï¿½ï¿½ï¿½È£_18032081");            //ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½Ù¿ï¿½ Ç¥ï¿½ÃµÇ´ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdParam,
     int nCmdShow)
 {
-    HWND hWnd;                                 //À©µµ¿ì ÇÚµé ¼±¾ð
-    MSG Message;                              //¸Þ¼¼Áö ±¸Á¶Ã¼ º¯¼ö ¼±¾ð
-    WNDCLASS WndClass;                           //Windows Class ±¸Á¶Ã¼ º¯¼ö ¼±¾ð
-    g_hInst = hInstance;                        //hInstance°ªÀ» ¿ÜºÎ¿¡¼­µµ »ç¿ëÇÒ ¼ö ÀÖµµ·Ï Àü¿ªº¯¼ö¿¡ °ªÀ» ÀúÀå
+    HWND hWnd;                                 //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½ ï¿½ï¿½ï¿½ï¿½
+    MSG Message;                              //ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WNDCLASS WndClass;                           //Windows Class ï¿½ï¿½ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    g_hInst = hInstance;                        //hInstanceï¿½ï¿½ï¿½ï¿½ ï¿½ÜºÎ¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    WndClass.cbClsExtra = 0;                     //¿¹¾à ¿µ¿ª. Áö±ÝÀº »ç¿ëX
-    WndClass.cbWndExtra = 0;                     //¿¹¾à ¿µ¿ª
-    WndClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);   // À©µµ¿ìÀÇ ¹è°æ »ö»óÀ» ÁöÁ¤
-    WndClass.hCursor = LoadCursor(NULL, IDC_ARROW);      //À©µµ¿ìÀÇ ¸¶¿ì½ºÆ÷ÀÎÅÍ ¸ð¾çÀ» ÁöÁ¤
-    WndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);   //À©µµ¿ìÀÇ Ä¿¼­ ¾ÆÀÌÄÜ ¸ð¾ç ÁöÁ¤
-    WndClass.hInstance = hInstance;                  //À©µµ¿ì Å¬·¡½º¸¦ µî·ÏÇÏ´Â ÇÁ·Î±×·¥ ¹øÈ£
-    WndClass.lpfnWndProc = WndProc;                  //À©µµ¿ì ¸Þ¼¼Áö Ã³¸® ÇÔ¼ö ÁöÁ¤
-    WndClass.lpszClassName = lpszClass;               //À©µµ¿ì Å¬·¡½ºÀÇ ÀÌ¸§ ÁöÁ¤
-    WndClass.lpszMenuName = NULL;                  //¸Þ´º ÁöÁ¤
-    WndClass.style = CS_HREDRAW | CS_VREDRAW;         //À©µµ¿ìÀÇ ½ºÅ¸ÀÏÀ» Á¤ÀÇ
+    WndClass.cbClsExtra = 0;                     //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½X
+    WndClass.cbWndExtra = 0;                     //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WndClass.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);   // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WndClass.hCursor = LoadCursor(NULL, IDC_ARROW);      //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WndClass.hIcon = LoadIcon(NULL, IDI_APPLICATION);   //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WndClass.hInstance = hInstance;                  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½È£
+    WndClass.lpfnWndProc = WndProc;                  //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WndClass.lpszClassName = lpszClass;               //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WndClass.lpszMenuName = NULL;                  //ï¿½Þ´ï¿½ ï¿½ï¿½ï¿½ï¿½
+    WndClass.style = CS_HREDRAW | CS_VREDRAW;         //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    RegisterClass(&WndClass);                     //WNDCLASS ±¸Á¶Ã¼ÀÇ ¹øÁö¸¦ Àü´Þ
+    RegisterClass(&WndClass);                     //WNDCLASS ï¿½ï¿½ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
-    hWnd = CreateWindow(lpszClass, lpszClass,         //À©µµ¿ì¸¦ »ý¼º
+    hWnd = CreateWindow(lpszClass, lpszClass,         //ï¿½ï¿½ï¿½ï¿½ï¿½ì¸¦ ï¿½ï¿½ï¿½ï¿½
         WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
         CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT
         /* 100,100,500,500*/, NULL, (HMENU)NULL, hInstance, NULL);
 
     ShowWindow(hWnd, nCmdShow);
 
-    //¸Þ¼¼Áö ·çÇÁ¸¦ ½ÇÇà
-    while (GetMessage(&Message, NULL, 0, 0)) {         //Queue¿¡ ÀÖ´Â ¸Þ¼¼Áö¸¦ ÀÐ¾îµéÀÎ´Ù
-        TranslateMessage(&Message);                  //Å°º¸µå ÀÔ·Â ¸Þ¼¼Áö¸¦ ÇÁ·Î±×·¥¿¡¼­ ½±°Ô »ç¿ëÇÒ ¼ö ÀÖµµ·Ï °¡°ø
-        DispatchMessage(&Message);                  //¸Þ¼¼Áö¸¦ À©µµ¿ìÀÇ ¸Þ¼¼Áö Ã³¸® ÇÔ¼ö WndProc·Î Àü´Þ
+    //ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    while (GetMessage(&Message, NULL, 0, 0)) {         //Queueï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½ï¿½ï¿½Î´ï¿½
+        TranslateMessage(&Message);                  //Å°ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Öµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        DispatchMessage(&Message);                  //ï¿½Þ¼ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ ï¿½Ô¼ï¿½ WndProcï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
-    return (int)Message.wParam;                     //Å»Ãâ ÄÚµå. ÇÁ·Î±×·¥ Á¾·á
+    return (int)Message.wParam;                     //Å»ï¿½ï¿½ ï¿½Úµï¿½. ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½
 }
 
 
@@ -48,17 +48,18 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 {
     HDC hdc;
     PAINTSTRUCT ps;
-    static int box_x = 400;  //Áß¾Ó ¹Ú½º ÁÂÇ¥
+    static int box_x = 400;  //ï¿½ß¾ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½Ç¥
     static int box_y = 400;
-    static int box_s = 50;    //¹Ú½º »çÀÌÁî
-    static int h = 100;       //ÀÌµ¿ ¹üÀ§
-    static int ax = 400;     //»ö¹Ú½º ÀÇ ÁÂÇ¥
+    static int box_s = 50;    //ï¿½Ú½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    static int h = 100;       //ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
+    static int ax = 400;     //ï¿½ï¿½ï¿½Ú½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ç¥
     static int ay = 400;
     HBRUSH HBrush, OldBrush;
     static int r;
     static int g;
     static int b;
     static BOOL Key_D = FALSE;
+    int a;
 
     switch (iMessage) {
     case WM_CREATE:
